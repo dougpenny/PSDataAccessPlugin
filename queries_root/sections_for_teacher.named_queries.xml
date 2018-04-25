@@ -1,0 +1,39 @@
+<queries>
+  <query name="com.nrcaknights.swiftypowerschool.section.get_by_teacher" coreTable="SECTIONS" flattened="true">
+    <description>List of sections currently being taught by a teacher</description>
+    <args>
+      <arg name="teacher_id" required="true" description="Teacher ID (not the teacher number)" type="primitive" />
+    </args>
+    <columns>
+      <column column="sections.id">sections.id</column>
+      <column column="sections.course_number">sections.course_number</column>
+      <column column="courses.course_name">sections.course_name</column>
+      <column column="sections.external_expression">sections.external_expression</column>
+      <column column="sections.no_of_students">sections.num_students</column>
+      <column column="sections.room">sections.room</column>
+    </columns>
+    <sql><![CDATA[
+       select
+       sections.id,
+       sections.course_number,
+       courses.course_name,
+       sections.external_expression,
+       sections.no_of_students,
+       sections.room
+       from
+       sections inner join
+       courses on courses.course_number = sections.course_number
+       where
+       sections.teacher = :teacher_id and
+       /***
+       To get the current term we subtract 7 months from the current date
+       to get the current school year and subtract this value from the
+       epoch year (1990) to get the first two digits of the current PowerSchool term.
+       4/24/2018 - 7 months -> 10/24/2017 -> 2017 - 1990 -> 27
+       ***/
+       substr(sections.termid,1,2) = to_char(add_months(sysdate,-7),'YYYY') - 1990
+       order by
+       sections.external_expression
+    ]]></sql>
+  </query>
+</queries>
