@@ -7,6 +7,8 @@
         description="A collection of PowerQueries to be used with SwiftyPowerSchool">
     <oauth></oauth>
     <access_request>
+        <field table="cc" field="sectionid" access="ViewOnly" />
+        <field table="cc" field="studentid" access="ViewOnly" />
         <field table="courses" field="course_name" access="ViewOnly" />
         <field table="courses" field="course_number" access="ViewOnly" />
         <field table="sections" field="id" access="ViewOnly" />
@@ -16,6 +18,14 @@
         <field table="sections" field="room" access="ViewOnly" />
         <field table="sections" field="teacher" access="ViewOnly" />
         <field table="sections" field="termid" access="ViewOnly" />
+        <field table="students" field="dcid" access="ViewOnly" />
+        <field table="students" field="student_number" access="ViewOnly" />
+        <field table="students" field="first_name" access="ViewOnly" />
+        <field table="students" field="last_name" access="ViewOnly" />
+        <field table="students" field="lastfirst" access="ViewOnly" />
+        <field table="students" field="gender" access="ViewOnly" />
+        <field table="students" field="grade_level" access="ViewOnly" />
+        <field table="students" field="id" access="ViewOnly" />
     </access_request>
     <publisher name="North Raleigh Christian Academy">
         <contact email="github@nrcaknights.com"/>
