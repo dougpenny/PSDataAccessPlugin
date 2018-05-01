@@ -13,27 +13,31 @@
       <column column="sections.room">sections.room</column>
     </columns>
     <sql><![CDATA[
-       select
-       sections.id,
-       sections.course_number,
-       courses.course_name,
-       sections.external_expression,
-       sections.no_of_students,
-       sections.room
-       from
-       sections inner join
-       courses on courses.course_number = sections.course_number
-       where
-       sections.teacher = :teacher_id and
-       /***
-       To get the current term we subtract 7 months from the current date
-       to get the current school year and subtract this value from the
-       epoch year (1990) to get the first two digits of the current PowerSchool term.
-       4/24/2018 - 7 months -> 10/24/2017 -> 2017 - 1990 -> 27
-       ***/
-       substr(sections.termid,1,2) = to_char(add_months(sysdate,-7),'YYYY') - 1990
-       order by
-       sections.external_expression
+       SELECT
+          sections.id,
+          sections.course_number,
+          courses.course_name,
+          sections.external_expression,
+          sections.no_of_students,
+          sections.room
+
+       FROM
+          sections INNER JOIN
+          courses on courses.course_number = sections.course_number
+
+       WHERE
+          sections.teacher = :teacher_id and
+
+          /***
+          To get the current term we subtract 7 months from the current date
+          to get the current school year and subtract this value from the
+          epoch year (1990) to get the first two digits of the current PowerSchool term.
+          4/24/2018 - 7 months -> 10/24/2017 -> 2017 - 1990 -> 27
+          ***/
+          substr(sections.termid,1,2) = to_char(add_months(sysdate,-7),'YYYY') - 1990
+
+       ORDER BY
+          sections.external_expression
     ]]></sql>
   </query>
 </queries>
