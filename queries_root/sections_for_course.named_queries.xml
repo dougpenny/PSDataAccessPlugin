@@ -1,8 +1,8 @@
 <queries>
-  <query name="com.nrcaknights.swiftypowerschool.section.for_teacher" coreTable="SECTIONS" flattened="true">
-    <description>List of sections currently being taught by a teacher</description>
+  <query name="com.nrcaknights.swiftypowerschool.section.for_course_number" coreTable="SECTIONS" flattened="true">
+    <description>List of all sections for a given course number</description>
     <args>
-      <arg name="teacher_id" required="true" description="Teacher ID (not the teacher number)" type="primitive" />
+      <arg name="course_number" required="true" description="Course Number" type="primitive" />
     </args>
     <columns>
       <column column="courses.course_name">sections.course_name</column>
@@ -32,7 +32,7 @@
           courses on courses.course_number = sections.course_number
 
        WHERE
-          sections.teacher = :teacher_id and
+          sections.course_number = :course_number and
 
           /***
           To get the current term we subtract 7 months from the current date

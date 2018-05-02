@@ -19,6 +19,7 @@
         <field table="sections" field="id" access="ViewOnly" />
         <field table="sections" field="no_of_students" access="ViewOnly" />
         <field table="sections" field="room" access="ViewOnly" />
+        <field table="sections" field="section_number" access="ViewOnly" />
         <field table="sections" field="teacher" access="ViewOnly" />
         <field table="sections" field="termid" access="ViewOnly" />
 
