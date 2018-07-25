@@ -10,6 +10,9 @@
         <field table="cc" field="sectionid" access="ViewOnly" />
         <field table="cc" field="studentid" access="ViewOnly" />
 
+        <field table="schoolstaff" field="dcid" access="ViewOnly" />
+        <field table="schoolstaff" field="id" access="ViewOnly" />
+
         <field table="courses" field="course_name" access="ViewOnly" />
         <field table="courses" field="course_number" access="ViewOnly" />
 
