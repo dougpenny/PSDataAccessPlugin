@@ -2,7 +2,7 @@
   <query name="com.nrcaknights.swiftypowerschool.students.homeroom_roster_for_teacher" coreTable="STUDENTS" flattened="true">
     <description>List of students in given teacher's homeroom</description>
     <args>
-      <arg name="teacher_id" required="true" description="Teacher ID (not the teacher number)" type="primitive" />
+      <arg name="teacher_id" required="true" description="Teacher DCID (not the teacher number)" type="primitive" />
     </args>
     <columns>
       <column column="students.dcid">students.dcid</column>
@@ -29,9 +29,11 @@
           cc, sections, students
 
        WHERE
-          cc.sectionid= sections.id
+          cc.sectionid = sections.id
           AND cc.studentid = students.id
-          AND sections.teacher = :teacher_id
+          AND sections.teacher in (
+             SELECT schoolstaff.id FROM schoolstaff WHERE schoolstaff.dcid = :teacher_id
+          )
 
           /***
           You can modify the course number filters below to match your homeroom couses
