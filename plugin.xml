@@ -2,29 +2,12 @@
 <plugin xmlns="http://plugin.powerschool.pearson.com"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
-        name="SwiftyPowerSchool PowerQueries"
-        version="1.1"
-        description="A collection of PowerQueries to be used with SwiftyPowerSchool">
+        name="SwiftyPSCore"
+        version="1.0"
+        description="SwiftyPSCore Plugin">
     <oauth></oauth>
     <access_request>
-        <field table="cc" field="sectionid" access="ViewOnly" />
-        <field table="cc" field="studentid" access="ViewOnly" />
-
-        <field table="schoolstaff" field="dcid" access="ViewOnly" />
-        <field table="schoolstaff" field="id" access="ViewOnly" />
-
-        <field table="courses" field="course_name" access="ViewOnly" />
-        <field table="courses" field="course_number" access="ViewOnly" />
-
-        <field table="sections" field="course_number" access="ViewOnly" />
         <field table="sections" field="dcid" access="ViewOnly" />
-        <field table="sections" field="external_expression" access="ViewOnly" />
-        <field table="sections" field="id" access="ViewOnly" />
-        <field table="sections" field="no_of_students" access="ViewOnly" />
-        <field table="sections" field="room" access="ViewOnly" />
-        <field table="sections" field="section_number" access="ViewOnly" />
-        <field table="sections" field="teacher" access="ViewOnly" />
-        <field table="sections" field="termid" access="ViewOnly" />
 
         <field table="students" field="dcid" access="ViewOnly" />
         <field table="students" field="first_name" access="ViewOnly" />
