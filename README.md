@@ -5,6 +5,4 @@ The SwiftyPSCorePlugin is used, along with [SwiftyPSCore](https://github.com/NRC
 
 You can use the plugin as is, or you can modify and add to it as you see fit.
 
-_SwiftyPSCorePlugin is not endorsed, sponsored, or affilitated with PowerSchool in any way. Swift and the Swift logo are trademarks of Apple Inc._
-
-***
+_SwiftyPSCorePlugin is not endorsed, sponsored, or affilitated with PowerSchool in any way._
