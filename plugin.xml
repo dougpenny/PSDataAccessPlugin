@@ -2,11 +2,17 @@
 <plugin xmlns="http://plugin.powerschool.pearson.com"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
-        name="SwiftyPSCore"
+        name="PSDataAccessCore"
         version="1.0"
-        description="SwiftyPSCore Plugin">
+        description="Basic data access core plugin">
     <oauth></oauth>
     <access_request>
+        <field table="messagekeymap" field="languageisocode" access="ViewOnly" />
+
+        <field table="schools" field="high_grade" access="ViewOnly" />
+        <field table="schools" field="low_grade" access="ViewOnly" />
+        <field table="schools" field="school_number" access="ViewOnly" />
+
         <field table="sections" field="dcid" access="ViewOnly" />
 
         <field table="students" field="dcid" access="ViewOnly" />
@@ -18,7 +24,7 @@
         <field table="students" field="lastfirst" access="ViewOnly" />
         <field table="students" field="student_number" access="ViewOnly" />
     </access_request>
-    <publisher name="North Raleigh Christian Academy">
-        <contact email="github@nrcaknights.com"/>
+    <publisher name="Example Plugin">
+        <contact email="plugin@example.com"/>
     </publisher>
 </plugin>
