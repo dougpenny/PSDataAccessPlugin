@@ -2,9 +2,9 @@
 <plugin xmlns="http://plugin.powerschool.pearson.com"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
-        name="PSDataAccessCore"
+        name="PSDataAccess"
         version="1.0"
-        description="Basic data access core plugin">
+        description="Basic data access example plugin">
     <oauth></oauth>
     <access_request>
         <field table="messagekeymap" field="languageisocode" access="ViewOnly" />
